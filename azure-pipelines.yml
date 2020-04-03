@@ -51,3 +51,9 @@ stages:
               tags: |
                 latest
                 $(tag)
+          - task: AzureAppServiceManage@0
+            displayName: Restart the web app
+            inputs:
+              azureSubscription: 'Pay-As-You-Go(bcbd3faa-a503-4f9a-88ef-1e66b902964c)'
+              Action: 'Restart Azure App Service'
+              WebAppName: 'idayms'
